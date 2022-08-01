@@ -10,7 +10,7 @@
 
     <div id="app">
         <h2 >{{title}}</h2>
-        <input type="text"  v-model="title">
+        <input type="text"  v-model="title" @keydown.enter="addtodo">
         <ul>
             <li v-for="todo in todos">{{todo}}</li>
         </ul>
@@ -29,6 +29,13 @@
                 title: "",
                 todos: ['吃饭', '睡觉']
             } 
+        },
+        methods:{
+            addtodo(){
+                this.todos.push(this.title)
+                this.title=''
+            }
+
         }
     }
 
