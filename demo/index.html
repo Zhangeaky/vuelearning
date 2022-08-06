@@ -24,6 +24,19 @@
         </div>
         <p>{{active}}/{{all}}</p>
     </div>
+
+
+    <div id="main">
+        <input type="text" v-if="show===true">
+
+        <p>
+            <input type="checkbox" v-model="show">
+        </p>
+
+
+    </div>
+
+    
     
 </body>
 </html>
@@ -31,6 +44,14 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs
 /jquery/1.7.0/jquery.min.js"></script>
 <script>
+    const Main = {
+        data() {
+            return{
+                show: false
+            }
+        }
+    }
+ 
 
 
     const App = {
@@ -100,4 +121,9 @@
         
 
     }
+
+    #main{
+        position: relative;
+    }
+        
 </style>
